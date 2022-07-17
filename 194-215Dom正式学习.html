@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Document文档的意思 -->
+    <title>Document</title>
+    <style> 
+        img{
+            width: 300px;
+        }
+        #qie{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        #focus{
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="hello">lalalalala</div>
+    <ul>
+        <li>崩坏1lala</li>
+        <li>崩坏2lala</li>
+        <li>崩坏3lala</li>
+        <li>崩坏4lala</li>
+        <li>崩坏5lala</li>
+    </ul>
+    <ol id="oll">
+        <li>丫丫1</li>
+        <li>丫丫2</li>
+        <li>丫丫3</li>
+        <div>kyi</div>
+        <div>kyo</div>
+    </ol>
+
+    <div class="box">233</div>
+    <div class="box">344</div>
+
+    <button id="ov">点我</button> -->
+
+    <!-- <button id="sj">点我显示时间</button>
+    <div id="sj1">时间</div>
+
+    <p>
+        我也好
+        <span>123</span>
+    </p> -->
+
+    <!-- <button id="leimu">蕾姆</button>
+    <button id="lamu">拉姆</button>
+    <br>
+        //title鼠标经过时显示的内容
+    <img src="img/蕾姆.jpeg" alt="" title="蕾姆" id="img1"> -->
+
+    <!-- <div id="qie"></div> -->
+
+    <!-- <input type="text" value="手机" id="focus"> -->
+
+
+    <script>
+        //通过id获取对象
+        // var hello = document.getElementById('hello');
+        // console.log(hello);
+        // console.dir(hello);
+
+        // //通过标签名获取对象
+        // var bh3 = document.getElementsByTagName('li');
+        // console.log(bh3);
+        // console.log(bh3[0]);
+        // //各输出一遍，用遍历、
+        // for (var i = 0; i < bh3.length; i++) {
+        //     console.log(bh3[i]);
+        // }
+
+        //只想要ol里面的li
+        // var olll = document.getElementById('oll');
+        // console.log(olll.getElementsByTagName('li'));
+
+        //用类名获取元素,新增，兼容性问题
+        // var boxs = document.getElementsByClassName('box');
+        // console.log(boxs);
+
+        //选择器
+        // var xzq = document.querySelectorAll('.box');
+        // console.log(xzq);
+
+        //事件初学,事件三要素
+        // 1。获取事件源
+        // var ovv = document.getElementById('ov');
+        // // 2.绑定事件   3.添加事件处理程序
+        // ovv.onclick = function () {
+        //     alert('我被选中了');
+        // }
+
+        //点击id为sj的按钮显示当前时间
+        // var sj  = document.getElementById('sj');
+        // var sj1 = document.getElementById('sj1');
+        // sj.onclick = function(){
+        //     sj1.innerText = getDate1();
+        // }
+        // function getDate1() {
+        //     var date = new Date();
+        //     var year = date.getFullYear();
+        //     var month = date.getMonth() + 1;
+        //     var date = date.getDate();
+        //     return '今天是 ' + year + '年' + month + '月' + date + '日';
+        // }
+
+        // innerText(不识别html标签) 和 innerHTML(识别html标签)的区别
+        // var p = document.querySelector('p');
+        // console.log(p.innerText); 
+        // console.log(p.innerHTML); 
+
+        //根据按钮切换蕾姆和拉姆
+        // var leimu = document.getElementById('leimu');
+        // var lamu = document.getElementById('lamu');
+        // var img = document.getElementById('img1');
+        // leimu.onclick = function(){
+        //     img.src="img/蕾姆.jpeg";
+        //     img.title="蕾姆";
+        // }
+        // lamu.onclick = function(){
+        //     img.src="img/拉姆.jpeg";
+        //     img.title="拉姆";
+        //     //禁用按钮
+        //     this.disabled = true;
+        // }
+        
+        // var qie = document.getElementById('qie');
+        // qie.onclick = function(){
+        //     this.style.backgroundColor = 'purple';
+        //     this.style.width = '250px'
+        // }
+
+        var focus = document.getElementById('focus');
+        //获取焦点
+        focus.onfocus = function(){
+            if (focus.value === '手机') {
+                this.value = '';
+            }
+            this.style.color = '#333'
+        }
+        focus.onblur = function(){
+            if (focus.value === '') {
+                this.value = '手机';
+            }
+            this.style.color = '#999'
+        }
+
+    </script>
+</body>
+
+</html>

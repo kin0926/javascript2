@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关闭二维码</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .erweima{
+            margin: 200px 700px;
+            position: relative;
+            display: block;
+        }
+        #wrong{
+            position: absolute;
+            left: -20px;
+            top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="erweima">
+        <img src="img/tao.png" alt="">
+        <img src="img/wrong.png" alt="" id="wrong">
+    </div>
+
+
+    <script>
+        var erweima = document.querySelector('.erweima');
+        var wrong = document.getElementById('wrong');
+        wrong.onclick = function(){
+            erweima.style.display = 'none';
+        }
+
+    </script>
+</body>
+</html>

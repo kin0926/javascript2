@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var num = prompt('请输入重复次数');
+        // for (var i = 1; i <= num; i++) {
+        //     console.log('你点击了：'+i);
+        // }
+
+        // 1~100的和的平均数
+        // var num = 0;
+        // for (var i = 1 ; i<=100 ; i++) {
+        //     num+=i;
+        // }
+        // console.log(num/100);
+
+        // 求所有偶数和所有基数的和
+        // var even =0;    //求偶数和
+        // var pase =0;    //求基数和
+        // for(var i = 1; i<=100;i++){
+        //     // if (i % 2 == 0) {
+        //     //     even += i;
+        //     // }
+        //     // if (i % 2 != 0) {
+        //     //     pase += i;
+        //     // }
+
+        //     // 用三元表达式试试
+        //     i % 2 ==0 ?  even += i : pase += i;
+        // }
+        // console.log('偶数和为: '+ even);
+        // console.log('基数和为: '+ pase);
+
+        // 求1~100中能被3整除的数字的和
+        // var num1 = 0;
+        // for(var i = 1 ; i <= 100; i++){
+        //     i % 3 ==0 ? num1+=i : i ;
+        // }
+        // console.log('能被3整除的数字和是：' + num1);
+
+        // 案例：计算班级学生成绩
+        // var numMan = prompt('输入班级学生人数');
+        // var numResult = 0;   //班级总成绩
+        // for(var i =1; i<=numMan ; i++){
+        //     var man1 = prompt('请输入学生'+i+'的成绩:');
+        //     numResult+=parseFloat(man1);
+        // }
+        // alert('班级总成绩'+numResult);
+        // alert('班级平均成绩'+numResult/numMan);
+
+        // 打印5x5的星星
+        // var str = '';
+        // for (var i = 1; i<=5 ; i++) {
+        //     for(var m=1 ;m<=5; m++){
+        //     str = str+'★';
+        //     }
+        //     // 打印完一轮后要换行
+        //     str = str + '\n'
+        // }console.log(str);
+
+        // 打印NxN的星星
+        // var str1 = '';
+        // var row = prompt('想要几行？');
+        // var column = prompt('想要几列？');
+        // for (var i = 1 ; i <=row ; i++) {
+        //     for (var j = 1 ; j <= column ; j++) {
+        //         str1 = str1 + '★';
+        //     }
+        //     str1 += '\n';
+        // }
+        // alert(str1);
+
+        // 打印倒三角(方法1)
+        // var str2 = '';
+        // for (var i = 1 ; i <=10 ; i++) {
+        //     for (var j = i ; j <= 10 ; j++) {
+        //         str2 = str2 + '★';
+        //     }
+        //     str2 += '\n';
+        // }
+        // alert(str2);
+
+        // 打印倒三角(方法2)
+        // var str3 = '';
+        // for(var i = 1; i <=10 ; i++){
+        //     for(var j = 1 ; j <= (11-i) ; j++){   //换成 (j <= i) 就是正三角形了
+        //         str3 = str3+'★';
+        //     }
+        //     str3 =str3+ '\n';
+        // }
+        // alert(str3);
+
+        // 九九乘法表
+        // var str4 = '';
+        // for(var i = 1 ; i < 10 ; i++){
+        //     for(var j = 1 ; j <= i ; j++){
+        //         str4 += j+'*'+i+'='+j*i+'   ';
+        //     }
+        //     str4 += '\n';
+        // }
+        // console.log(str4);
+
+        // while循环          while先判断再执行  do while先执行再判断
+        // var happy = prompt('你开心吗？')
+        // while (happy !== '开心') {
+        //     happy = prompt('你开心吗？')
+        // }
+        // alert('我也一样');
+
+        //do while 打印人的一生
+        // var num2 = 1;
+        // do{
+        //     console.log('我'+num2+'岁了');
+        //     num2++;
+        // } while(num2<100);
+
+        //do while 循环
+        // do{
+        //     var happy = prompt('你快乐吗？')
+        // }while (happy !== '快乐') ;
+        // alert('我也一样');
+
+        //continue跳出当前的循环，不影响下个循环  ||       break跳出整个循环，直接结束
+        // for(var i = 1; i <= 10 ; i++){
+        //     if(i == 4){
+        //         console.log('干掉本次循环');
+        //         continue;
+        //     }
+        //     if (i==7) {
+        //         console.log('我直接强行结束整个循环,不让你到10');
+        //         break;
+        //     }
+
+        //     console.log('我是第'+i+'个');
+        // }
+
+        //求1~100（不能）被7整除的数的和 用continue
+        // var num3 = 0;
+        // for (var i = 1; i <= 100; i++) {
+        //     if (i % 7 == 0) {
+        //         continue;
+        //     }
+        //     num3 += i;
+        // }
+        // console.log(num3);
+
+        //100以内7的倍数和
+        // var num4 = 0;
+        // for (var i = 1; i <= 100; i++) {
+        //     if (i % 7 == 0) {
+        //         continue;
+        //     }
+        //     num4 += i;
+        // }
+        // console.log(num4);
+
+        //输入用户名密码登录，用户名main 密码123456
+        // do{
+        //    var name1 = prompt('输入用户名'); 
+        // }while(name1 !=='main');
+        // do{
+        //    var pass1 = prompt('输入密码'); 
+        // }while(pass1 !=='123456');
+        // alert('登录成功')
+
+        //简易ATM
+        /*
+            1、里面初始有100元
+            2、存钱就用输入的钱加上之前的钱，然后输出余额
+            3、取钱就减去取得钱，之后弹出余额提示框
+            4、如果选择显示余额，则弹出余额提示框
+            5、退出则弹出退出提示框
+        */
+        var shuru = prompt('操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出');
+        var qian = 100;
+        while (qian >= 10) {
+            if (shuru == '1') {
+                var msg = prompt('存钱');
+                msg = parseInt(msg);
+                qian = qian + msg;
+                alert('余额' + qian);
+                shuru = prompt('操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出');
+            }
+            if (shuru == '2') {
+                var msg = prompt('存钱');
+                msg = parseInt(msg);
+                qian = qian - msg;
+                alert('余额' + qian);
+                shuru = prompt('操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出');
+            }
+            if (shuru == '3') {
+                alert('余额' + qian);
+                shuru = prompt('操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出');
+            }
+            if (shuru == '4') {
+                shuru = false;
+                break;
+            }
+        }
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

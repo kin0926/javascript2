@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ipt{
+            width: 80px;
+            margin: 200px auto;
+            background-color: white;
+            border: 1px black solid;
+        }
+    </style>
+</head>
+<body id="bod">
+    <input type="button" value="开关灯" id="ipt">
+    <script>
+        var ipt = document.getElementById('ipt');
+        var bod = document.getElementById('bod')
+        var date = 0;
+        ipt.onclick = function(){
+            if(date == 0){
+                bod.style.backgroundColor = 'black';
+                // bod.style.background = 'url(img/tao.png)';
+                date = 1;
+            }else {
+                bod.style.background = 'white';
+                date = 0;
+            }
+        }
+    </script>
+</body>
+</html>

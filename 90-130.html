@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //  数组   arr[序列号]-可以输出特定内容
+        var arr = [2,4,'abb',true];
+        console.log(arr[3]);
+
+        //定义一个星期一到星期日的数组，然后输出星期日
+        var arr1 = ['星期一','星期二','星期三','星期四','星期五','星期六','星期日','幻想星期八'];
+        console.log(arr1[7]);
+        for(var i = 0; i < arr1.length ; i++){
+            console.log(arr1[i]);
+        }
+
+        //数组[2,6,1,7,4],算总和和平均数
+        var arr2 = [2,6,1,7,4];
+        var num = 0;
+        for(var i = 0 ; i<arr2.length ; i++){
+            num += arr2[i];
+        }
+        console.log('总和是'+num);
+        console.log('平均数是'+num/arr2.length);
+
+        //求最大值max    arr3[2,6,1,77,52,25,1,91,34]
+        var arr3 = [2,6,1,77,52,25,1,91,34];
+        var max = 2;           //这里是先把最大的设定成数组第一个，之后再比较
+        for(var i = 0; i < arr3.length ; i++){
+            if (max <= arr3[i]) {
+                    max = arr3[i];
+            }
+        }
+        console.log(max);
+
+        //将数组[1,5,8,3,5,'bye']转换成字符串，用|分割,即xx|xx|xx|xx
+        //同时让最后一个字符串后面不加‘|’
+        var arr4 = [1,5,8,3,5,'bye','hello'];
+        var num2 = '';
+        for(var i = 0 ; i < arr4.length ; i++){
+            if (i == arr4.length-1) {           //i = 5 时执行
+                num2 = num2 + arr4[i];
+                break;
+            }
+            num2 = num2 + arr4[i] + '|';
+        }
+        console.log(num2);
+        
+        //修改和输出数组长度
+        var arr5 = [1,3,5,7];
+        console.log(arr5.length);
+        arr5.length = 8;         //数组长度改为8
+        console.log(arr5.length);
+
+        console.log(arr5[5]);
+        arr5[5] = 9;             //把9赋值为5的内容
+        console.log(arr5[5]);
+
+        arr5[9] = 1829;         //数组长度到8，但可以通过追加来扩张数组
+        console.log(arr5.length);
+
+        //定义一个数组，里面存入10个整数1~10
+        var arr6 = [];
+        for(var i = 0 ; i < 10 ; i++){
+            arr6[i] = i+1;
+        }
+        console.log(arr6);
+
+        // //定义一个数组arr7，把里面大于等于10的数copy到newArr里面
+        var arr7 = [2,5,8,12,6,45,34,5,5,43];
+        var newArr = [];
+        for(var i = 0 ; i <arr7.length ; i++){
+            if(arr7[i] >= 10){
+                newArr[newArr.length] = arr7[i];
+            }
+        }
+        console.log(newArr);
+
+        //函数；封装一段代码，便于重复使用；
+        function getSum(num1,num2) {
+            var numa = 0;
+            for(var i = num1 ; i <num2 ; i++){
+                numa += i;
+            }
+            console.log(numa);
+        }
+        getSum(2,17);
+        //求1-100的累加和
+        getSum(1,100);
+
+        //利用函数求任意两个数的和
+        function getSum2(num1,num2) {
+            // var sum = 0;
+            // sum = num1 + num2;
+            // console.log(sum);
+            console.log(num1+num2);
+        }
+        getSum2(39,31);
+
+        //利用函数求任意两个数之间的和
+        function getSum3(num1,num2) {
+            var num = 0;
+            for(var i = num1+1 ; i <num2 ; i++){
+                num += i;
+            }
+            console.log(num);
+        }
+        getSum3(2,52);
+
+        //返回函数结果return
+        function getSum4() {
+            return 517517;
+        }
+        console.log(getSum4());
+
+        //利用函数求任意两个数的最大值
+        function maxNum(num1,num2) {
+            return '最大值是:'+ (num1 > num2) ? num1 : num2;  
+        }
+        console.log(maxNum(89,78));
+
+        //求数组的最大值
+        function maxArr(arr) {
+            var max = arr[0];
+            for(var i = 1 ; i < arr.length ; i++){
+                if (max < arr[i]) {
+                    max = arr[i]
+                }
+            }
+            return max;
+        }
+        var re = maxArr([23,45,132,7,22,67,2,45,7]);
+        console.log(re);
+
+        //return 只能返回一个值。如果用逗号隔开多个值，则返回最后一个值     ,如果没有return(返回值)则返回undefined
+        function name1(num1) {
+            //输出多个值，用逗号隔开
+            return 1,2,4,5,7,8;
+        }
+        console.log(name1());   //会发现只返回了8
+
+        //弹出输入框，求任意两个数的加减乘除结果
+        // function getjjcc(num1,num2) {
+        //     return [num1+num2, num1-num2, num1*num2, num1/num2]
+        // }
+        // alert()
+        // console.log(getjjcc(5,2));
+
+        //arguments   存储了传递过来的所有实参，以伪数组的方式
+        function fn() {
+            return arguments;
+        }
+        console.log(fn(1,2,3,4,5,6,7));
+
+        //利用函数求任意个数的最大值
+        function maxfn() {
+            var max = arguments[0];
+            for(var i = 0 ; i < arguments.length ; i++){
+                max < arguments[i] ? max = arguments[i] : max;
+            }
+            return max;
+        }
+        console.log(maxfn(1,2,3,242,312,4,3,534,16,516,341,234));
+
+        //函数是可以相互调用的
+        function fn1() {
+            console.log('111');
+            fn2();
+            console.log('你好');
+        }
+        fn2();
+        function fn2() {
+            console.log('223');
+        }
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

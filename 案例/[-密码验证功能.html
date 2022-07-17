@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            margin: 100px auto;
+        }
+        .mima{
+            display: inline-block;
+            font-size: 16px;
+            color: #999;
+            /* no-repeat 让背景不会出现平铺或重复的现象  repeat(重复)*/
+            background: url(img/mess.png) no-repeat left center;   
+            padding-left: 20px;
+        }
+        .mima2{
+            color: red;
+            background: url(img/wrong.png) no-repeat left center; 
+        }
+        .mima3{
+            color: rgb(7, 209, 17);
+            background: url(img/right.png) no-repeat left center; 
+        }
+    </style>
+</head>
+<body>
+    <div class="register">
+        <input type="password" id="ipt">
+        <i class="mima">请输入6~16位的密码</i>
+    </div>
+    
+    <script>
+        var ipt = document.getElementById('ipt');
+        var mima = document.querySelector('.mima');
+        ipt.onblur = function(){
+            if(ipt.value.length <6 || ipt.value.length>16){
+                mima.innerHTML = '密码不符合规范（6~16位）';
+                mima.className = 'mima mima2';
+            }else {
+                mima.innerHTML = '密码通过';
+                mima.className = 'mima mima3';
+            }
+        }
+    </script>
+</body>
+</html>

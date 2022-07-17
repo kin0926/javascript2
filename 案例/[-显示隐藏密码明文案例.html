@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密码明文</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: relative;
+            width: 400px;
+            margin: 100px auto;
+            border-bottom: 1px solid rgb(116, 116, 116);
+        }
+        .box input{
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: 0;
+        }
+        .box img{
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="password" id="pwd">
+        <label for="">
+            <img src="img/close.png" alt="" id="eye">
+        </label>
+    </div>
+
+
+    <script>
+        var pwd = document.querySelector('#pwd');   //这里的选择器要好好注意
+        var eye = document.querySelector('#eye');
+        var flag = 0;
+        eye.onclick = function() {
+            // 点击一次之后， flag 一定要变化
+            if (flag == 0) {
+                pwd.type = 'text';
+                eye.src = 'img/open.png';
+                flag = 1; // 赋值操作
+            } else {
+                pwd.type = 'password';
+                eye.src = 'img/close.png';
+                flag = 0;
+            }
+
+        }
+
+    </script>
+</body>
+</html>

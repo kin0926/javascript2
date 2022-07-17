@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .nav{
+            width: 800px;
+            margin: 30px auto;
+        }
+        li{
+            list-style-type: none;
+            text-align: center;
+        }
+        .nav>li{
+            position: relative;
+            float: left;
+            padding: 0 20px;
+            background-color: beige;
+        }
+        .nav ul{
+            display: none;
+            position: absolute;
+        }
+        a{
+            color: #000;
+            text-decoration: none;
+        }
+        a:hover{
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li>
+            <a href="">我的</a>
+            <ul>
+                <li>
+                    <a href="">公开</a>
+                </li>
+                <li>
+                    <a href="">私人</a>
+                </li>
+                <li>
+                    <a href="">特定对象</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="">收藏</a>
+            <ul>
+                <li>
+                    <a href="">公开</a>
+                </li>
+                <li>
+                    <a href="">私人</a>
+                </li>
+                <li>
+                    <a href="">特定对象</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="">知识</a>
+            <ul>
+                <li>
+                    <a href="">公开</a>
+                </li>
+                <li>
+                    <a href="">私人</a>
+                </li>
+                <li>
+                    <a href="">特定对象</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="">图片</a>
+            <ul>
+                <li>
+                    <a href="">公开</a>
+                </li>
+                <li>
+                    <a href="">私人</a>
+                </li>
+                <li>
+                    <a href="">特定对象</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        // 1. 获取元素
+        var nav = document.querySelector('.nav');
+        var lis = nav.children; // 得到4个小li
+        // 2.循环注册事件
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function() {
+                this.children[1].style.display = 'block';
+            }
+            lis[i].onmouseout = function() {
+                this.children[1].style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

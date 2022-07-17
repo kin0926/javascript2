@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .taps {
+            width: 1000px;
+            margin: 100px auto;
+        }
+
+        .tap_head {
+            height: 35px;
+            border: 1px solid rgb(25, 48, 58);
+            background-color: rgb(161, 245, 175);
+        }
+
+        .tap_head li {
+            list-style-type: none;
+            float: left;
+            height: 35px;
+            line-height: 39px;
+            /* 设置行高 */
+            padding: 0 20px;
+            text-align: center;
+            /* 设置文本的对齐方式 */
+            cursor: pointer;
+            /* cursor属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状,pointer是指示链接的指针（一只手） */
+        }
+
+        .tap_head .current {
+            background-color: brown;
+            color: aliceblue;
+        }
+
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="taps">
+        <div class="tap_head">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价</li>
+            </ul>
+        </div>
+        <div class="tap_body">
+            <div class="item" style="display: block">
+                Mikumikudance简称MMD，它是一款三维舞蹈动画视频制作软件。相信很多用户都听过初音未来，
+            </div>
+            <div class="item">
+                里面的卡通人物就可以通过这个软件来制作
+            </div>
+            <div class="item">
+                ，也有将其他格式的3D模型转换为MMD通用格式模型的，是目前比较流行的同人3D动画制作工具
+            </div>
+            <div class="item">
+                本页面索引了与MMD相关的制作教程、制作资源、常见问题以及各类优秀MMD作品等等。
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var lis = document.querySelector('.tap_head').querySelectorAll('li');
+        var items = document.querySelector('.tap_body').querySelectorAll('.item');
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index' , i);
+            lis[i].onclick = function () {
+                //选项卡模块
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                    items[i].style.display = 'none';
+                }
+                this.className = 'current';
+                items[i].style = 'display:block';
+
+                //内容模块
+                
+
+        }
+    }
+    </script>
+</body>
+
+</html>

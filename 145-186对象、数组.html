@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //快速格式化shift+alt+f
+
+        //对象的创建和使用
+        // var obj = {
+        //     uname : '梨花' , 
+        //     age : 18,
+        //     uplay : function () {
+        //         console.log('我叫梨花，我为自己代言！');
+        //     }
+        // }
+        // //使用
+        // console.log(obj.uname);
+        // console.log(obj['age']);
+        // console.log(obj.uplay());   //函数后面要加括号的，别忘了
+
+        // //用new Object创建对象
+        // var mr = new Object();
+        // mr.uname = '鸣人';
+        // mr.age = 19;
+        // mr.sex = '男';
+        // mr.skill = '影分身术';
+        //    //调用
+        // console.log(mr.uname , mr.age , mr['sex'] , mr['skill']);
+
+        //构造函数  首字母要大写
+        // function Star(uname, age, sex) {
+        //     this.uuname = uname;
+        //     this.age = age;
+        //     this.sex = sex;
+        //     this.sing = function (sing) {
+        //         console.log(sing);
+        //     }
+        // }
+        // var ldh = new Star('刘德华', 48, '男');
+        // console.log(ldh.uuname, ldh.age, ldh['sex'], );
+        // ldh.sing('明天镇江')
+
+        //构造函数小案例
+        // function Wzry(uname, type, blood, attack) {
+        //     this.uname = uname;
+        //     this.type = type;
+        //     this.blood = blood;
+        //     this.attack = attack;
+        // }
+        // var lp = new Wzry('廉颇', '力量型', '500血量', '攻击：近战');
+        // console.log(lp.uname, lp.type, lp.blood, lp.attack);
+
+        // var hy = new Wzry('后羿', '射手型', '100血量', '攻击：远程');
+        // console.log(hy.uname, hy.type, hy.blood, hy.attack);
+
+        // // for in 遍历
+        // var mm = {
+        //     uname: '梨花',
+        //     age: 18,
+
+        // }
+        // for (var k in mm) {
+        //     console.log(k);
+        //     console.log(mm[k]);
+        // }
+
+        // //最大值方法
+        // console.log(Math.max(1, 453, 62, 73, 32));
+        // //最小值方法
+        // console.log(Math.min(1, 453, 62, 73, 32));
+        // console.log(Math.floor(3.6432));   //向下取整
+        // console.log(Math.ceil(3.6432));    //向上取整
+        // console.log(Math.round(-4.6));     //四舍五入
+        // console.log(Math.abs(-3.5));       //绝对值
+        // console.log(Math.abs('-3.5'));     //绝对值   隐式转换
+
+        // //随机数
+        // console.log(Math.random());
+        // //取两个数间的随机数, 包含这两个数
+        // function getRandom(min, max) {
+        //     return Math.floor(Math.random() * (max - min + 1)) + min;
+        // }
+        // console.log(getRandom(0, 10));
+        // //随机点名
+        // var arr = ['小李', '小花', '小车', '李梦瑶', '吖太']
+        // // console.log(arr[gatRandom(0,3)]);
+        // console.log(arr[getRandom(0, arr.length - 1)]);
+
+        // //猜数字游戏
+        // // var sjs = getRandom(1,100);
+        // // var jh = 0;
+        // // while (sjs != num1 && jh <11) {
+        // //     var num1 = prompt('输入一个1~100的数字');
+        // //     if (sjs>num1) {
+        // //     alert('小了');
+        // // }else if(sjs<num1){
+        // //     alert('大了');
+        // // }else{
+        // //     alert('对了');
+        // //     break;
+        // // }
+        // // jh++;
+        // // }
+
+        // //Date()的使用   用来处理时间和日期的
+        // var date = new Date();
+        // console.log(date);
+        // var date1 = new Date(2022, 10, 25);
+        // console.log(date1);
+        // var date2 = new Date('2022-5-25 20:27:24');
+        // console.log(date2);
+
+        // console.log(date.getFullYear());  //年
+        // console.log(date.getMonth() + 1);   //月份是0-11，所以使用时要在后面+1，这样就是1-12月了
+        // console.log(date.getDate());      //日
+        // console.log(date.getDay());       //星期
+        // console.log(date.getHours());
+
+        // var year = date.getFullYear();
+        // var month = date.getMonth() + 1;
+        // var date = date.getDate();
+        // console.log('今天是 ' + year + '年' + month + '月' + date + '日');
+
+        // //倒计时
+        // function countDown(time) {
+        //     var nowTime = +new Date();     //获取总毫秒数
+        //     var inputTime = +new Date(time);  //返回用户输入时间的总毫秒数
+        //     var times = (inputTime - nowTime) / 1000;   //1秒=1000毫秒 ， times是剩余时间总毫秒数
+        //     var d = parseInt(times / 60 / 60 / 24);
+        //     d = d < 10 ? '0' + d : d;
+        //     var h = parseInt(times / 60 / 60 % 24);
+        //     h = h < 10 ? '0' + h : h;
+        //     var m = parseInt(times / 60 % 60);
+        //     m = m < 10 ? '0' + m : m;
+        //     var s = parseInt(times % 60);
+        //     s = s < 10 ? '0' + s : s;
+        //     return '还剩' + d + '天' + h + '小时' + m + '分钟' + s + '秒';
+        // }
+        // console.log(countDown('2022-6-20 18:00:00'));    //调用上面的countDown方法
+
+        // //添加和删除数组
+        // var arr = [1,2,3,4,5,6];
+        // arr.push(7,8,9,10);   //末尾添加
+        // arr.unshift(-1,0);    //开头添加
+        // arr.pop();            //末尾删除一个
+        // arr.shift();          //开头删除一个
+        // console.log(arr);
+
+        // //冒泡排序
+        // var arr1 = [23,2,23,46,1,6,72.1,57,15];
+        // arr1.sort(function (a,b) {
+        //     return a-b ; 
+        // })
+        // console.log(arr1);
+
+        // //翻转数组
+        // var arr2 = [1,2,3,4,5,6];
+        // arr2.reverse();
+        // console.log(arr2);
+
+        // //返回数组元素索引号 indexOf(某元素)【从前往后找】 lastIndexOf(某元素)【从后往前找】 ,
+        // //有多个相同的数组元素 返回第一个  ，没有满足条件的则返回-1
+        // var arr3 = [1,2,3,4,5,6,'asd','wqe',4,3];
+        // console.log(arr3.indexOf('asd'));
+        // console.log(arr3.indexOf(4));
+        // console.log(arr3.lastIndexOf(4));
+
+        // 数组去重 ['c', 'a', 'z', 'a', 'x', 'a', 'x', 'c', 'b'] 要求去除数组中重复的元素。
+        // 1.目标： 把旧数组里面不重复的元素选取出来放到新数组中， 重复的元素只保留一个， 放到新数组中去重。
+        // 2.核心算法： 我们遍历旧数组， 然后拿着旧数组元素去查询新数组， 如果该元素在新数组里面没有出现过， 我们就添加， 否则不添加。
+        // 3.我们怎么知道该元素没有存在？ 利用 新数组.indexOf(数组元素) 如果返回时 - 1 就说明 新数组里面没有改元素
+        // 封装一个 去重的函数 unique 独一无二的 
+        function unique(arr) {
+            var newArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (newArr.indexOf(arr[i]) === -1) {
+                    newArr.push(arr[i]);
+                }
+            }
+            return newArr;
+        }
+        var demo = unique(['c', 'a', 'z', 'a', 'x', 'a', 'x', 'c', 'b'])
+        console.log(demo);
+
+        //查找所有o
+        var str = "asdsdsoodfdsaofdagfaogofaogoago";
+        var index = str.indexOf('o');
+        var num2 = 0;
+        while (index != -1) {
+            console.log(index);
+            num2++;
+            index = str.indexOf('o',index+1)
+        }
+        console.log('O出现的次数是' + num2);
+        
+        //根据位置返回数组
+        var str1 = 'andi';
+        for (var i = 0 ; i < str1.length ; i++) {
+            console.log(str1.charAt(i));          //返回元素
+            console.log(str.charCodeAt(i));       //返回元素对应得ASCII码，可判断用户按了键盘的哪个键
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
